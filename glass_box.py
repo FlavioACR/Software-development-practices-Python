@@ -24,3 +24,40 @@ flujo pueda ser truncado"""
 
 import unittest
 
+def es_mayor_de_edad(edad):
+    '''Esta función comprueba la mayoria de edad
+    del parametro edad como entrada
+    
+    Para hacer el testing es necesario recorrer
+    todas sus posibilidades en este caso solo son dos
+    if, else, True y False. Por lo cual se tendra
+    que hacer un testing por cada uno.
+    '''
+    if edad >= 18:
+        return True
+    else:
+        return False
+    
+
+
+class PruebaDeCristalTest(unittest.TestCase):
+    
+    def test_es_mayor_de_edad(self):
+        edad = 20
+        # Se aplica la funcion o codigo para el testing:
+        resultado = es_mayor_de_edad(edad)
+
+        self.assertEqual(resultado, True)
+
+    def test_es_menor_de_edad(self):
+        edad = 15
+        # Se aplica la funcion o codigo para el testing:
+        resultado = es_mayor_de_edad(edad)
+
+        self.assertEqual(resultado, False)
+
+
+
+if __name__ == '__main__':
+    unittest.main()
+
